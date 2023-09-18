@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('website-home');
 });
 Auth::routes();
+
+
 //Route::get('/login', 'LoginController@loginSso');
 Route::get('/login/s', 'LoginController@login');
 
