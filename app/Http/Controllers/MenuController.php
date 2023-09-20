@@ -87,16 +87,24 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        
-      $MenuData = Menu::find($id);
-      $parent_id =  Menu::Where("parent_id",$id)->count();
-      
-      if($parent_id > 0){
-        return redirect('/menu')->with('success', "you can't delete this menu");
-      }else{
-        $MenuData->delete();
+
+        $chilsMenus = Menu::getChildMenus($id);
+        if(!empty($chilsMenus)){
+            Menu::whereIn('id', $chilsMenus)->delete();
+        }
         return redirect('/menu')->with('success', 'Menu deleted!');
-      }
+        
+
+        
+      // $MenuData = Menu::find($id);
+      // $parent_id =  Menu::Where("parent_id",$id)->count();
+      
+      // if($parent_id > 0){
+      //   return redirect('/menu')->with('success', "you can't delete this menu");
+      // }else{
+      //   $MenuData->delete();
+      //   return redirect('/menu')->with('success', 'Menu deleted!');
+      // }
       
         //
     }
