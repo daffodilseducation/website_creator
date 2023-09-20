@@ -8,7 +8,7 @@
     <div class="headingtitle">
       <h3>Domain</h3>
       <div style="text-align:right;">
-          <a id="logout" class="button" href="createMenu"><span>Create Menu</span></a>
+          <a id="logout" class="button" href="/createMenu"><span>Create Menu</span></a>
       </div>
     </div>
     <div class="pageContent"> 

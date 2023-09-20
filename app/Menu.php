@@ -26,7 +26,7 @@ class Menu extends Model
           $dt['label'] = $req->get('label');
           $dt['slug'] = $req->get('slug');
           $dt['order_no'] = $req->get('order');
-          $dt['icon'] = $file ? $file->getClientOriginalName() : "";
+          $dt['icon'] = $file ? 'menu/icons/'.$file->getClientOriginalName() : "";
           $dt['status'] = 'Active';
           $menus = new Menu($dt);
           $menus->save();
