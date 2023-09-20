@@ -3,20 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/lo2_sso/resources/views/pages/client/bulk-upload.blade.php</file>
-            <file>file:/var/www/lo2_sso/app/Http/Controllers/LoginController.php</file>
-            <file>file:/var/www/lo2_sso/storage/logs/laravel-2021-07-15.log</file>
-            <file>file:/var/www/lo2_sso/resources/views/login.blade.php</file>
-            <file>file:/var/www/lo2_sso/database/migrations/2021_06_25_102929_create_client_users_table.php</file>
-            <file>file:/var/www/lo2_sso/routes/web.php</file>
-            <file>file:/var/www/lo2_sso/database/migrations/2021_07_15_064953_create_client_user_passwords_table.php</file>
-            <file>file:/var/www/lo2_sso/app/ClientUserPassword.php</file>
-            <file>file:/var/www/lo2_sso/app/ClientUser.php</file>
-            <file>file:/var/www/lo2_sso/app/Http/Controllers/ClientUserController.php</file>
-            <file>file:/var/www/lo2_sso/storage/logs/laravel-2021-07-14.log</file>
-            <file>file:/var/www/lo2_sso/app/Http/Controllers/HomeController.php</file>
-            <file>file:/var/www/lo2_sso/app/Jobs/ProcessUsers.php</file>
-            <file>file:/var/www/lo2_sso/app/Http/Controllers/ApiController.php</file>
+            <file>file:/private/var/www/website_creator/composer.json</file>
+            <file>file:/private/var/www/website_creator/.env</file>
         </group>
     </open-files>
 </project-private>

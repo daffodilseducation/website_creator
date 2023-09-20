@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserLoginState extends Model
+class Menu extends Model
 {
-    protected $guarded =[];
+     protected $guarded =[];
 }
