@@ -93,7 +93,7 @@ class MenuController extends Controller
      public function menu(Request $request) {
         $userId = Auth::user()->id;
         if (!empty($userId)) {
-            $MenuData = Menu::where('user_id', '=', $userId)->get();
+            $MenuData = Menu::where('user_id', '=', $userId)->where('parent_id', '=', null)->get();
         }
         return view('pages.menu.index', compact('MenuData'));
     }
@@ -102,7 +102,8 @@ class MenuController extends Controller
         //session_start();
         //unset($_SESSION['email']);
         $userId = Auth::user()->id;
-        return view('pages.menu.create_menu', compact('userId'));
+        $parent_id = !empty($_GET['parent_id']) ? $_GET['parent_id'] : null;
+        return view('pages.menu.create_menu', compact('userId','parent_id'));
     }
     
     public function domainDetails(Request $request, $id) {

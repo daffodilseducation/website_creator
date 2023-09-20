@@ -3,6 +3,8 @@ $data= Auth::user();
 //die;
 ?>
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -117,3 +119,4 @@ $data= Auth::user();
     </div>
 </body>
 </html>
+

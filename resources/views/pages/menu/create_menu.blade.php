@@ -11,6 +11,7 @@
     <form action="/createMenu" method="post" enctype="multipart/form-data">
         @csrf
       <input type="hidden" name="user_id" id="secret" value="<?php echo $userId;?>">
+      <input type="hidden" name="parent_id" id="" value="<?php echo $parent_id;?>">
       <label for="fname">Enter Label</label>
       <input type="text" id="" name="label" placeholder="Enter Label..">
 
