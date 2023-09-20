@@ -15,19 +15,26 @@
         <table>
            <tr>
             <th>Sr No.</th>
-            <th>Domain</th>
+             <th>Id.</th>
+            <th>Label</th>
+            <th>Slug</th>
+            <th>Order</th>
             <th>Date</th>
+            <th>Parent</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
-            @foreach($ClientDomain as $ClientDomainVal)
+            @foreach($MenuData as $MenuVal)
           <tr>
             <td>{{$i++}}</td>
-            <td><a href="domainDetails/{{$ClientDomainVal->id}}">{{$ClientDomainVal->domain}}</a></td>
-            <!--<td>{{$ClientDomainVal->created_at}}</td>-->
-            <td><?php $old_date_timestamp = strtotime($ClientDomainVal->created_at); echo date('Y-M-d H:i:s', $old_date_timestamp); ?></td>
-            <td>{{$ClientDomainVal->status}}</td>
-            <td class="actions"><a href="domain/edit/{{$ClientDomainVal->id}}"><i class="fa fa-pencil"></i>Edit</a></td>
+            <td>{{$MenuVal->id}}</td>
+            <td><a href="domainDetails/{{$MenuVal->id}}">{{$MenuVal->label}}</a></td>
+              <td>{{$MenuVal->slug}}</td>
+              <td>{{$MenuVal->order_no}}</td>
+            <td><?php $old_date_timestamp = strtotime($MenuVal->created_at); echo date('Y-M-d H:i:s', $old_date_timestamp); ?></td>
+            <td>{{$MenuVal->parent_id}}</td>
+            <td>{{$MenuVal->status}}</td>
+            <td class="actions"><a href="/menu/edit/{{$MenuVal->id}}"><i class="fa fa-pencil"></i>Edit</a></td>
           </tr>
           @endforeach
         </table>

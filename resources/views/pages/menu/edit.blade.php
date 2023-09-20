@@ -11,22 +11,24 @@
 
 
 <div class="pageContent">
-  <form action="/updateDomain" method="post">
+  <form action="/updateMenu" method="post">
       @csrf
-    <input type="hidden" name="domain_id" id="secret" value="<?php echo $ClientDomain->id;?>">
-    <label for="fname">Enter Domain</label>
-    <input type="text" id="domain" name="domain" placeholder="Enter Domain.." value="{{$ClientDomain->domain}}">
+    <input type="hidden" name="id" id="secret" value="<?php echo $MenuData->id;?>">
+      <label for="fname">Enter Label</label>
+      <input type="text" id="" name="label" placeholder="Enter Label.." value="<?php echo $MenuData->label;?>">
 
-    <label for="lname">Enter Login Redirect Url </label>
-    <input type="text" id="login_redirect_url" name="login_redirect_url" placeholder="Enter Login Redirect Url.." value="{{$ClientDomain->login_redirect_url}}">
-    
-    <label for="lname">Enter Logout Redirect Url  </label>
-    <input type="text" id="logout_redirect_url" name="logout_redirect_url" placeholder="Enter Logout Redirect Url.." value="{{$ClientDomain->logout_redirect_url}}">
-    
+      <label for="lname">Enter Slug </label>
+      <input type="text" id="" name="slug" placeholder="Enter Slug.." value="<?php echo $MenuData->slug;?>">
+      
+      <label for="lname">Enter Order </label>
+      <input type="text" id="" name="order" placeholder="Enter Order.." value="<?php echo $MenuData->order_no;?>">
+      
+      <label for="lname">Icon  </label> <br>
+      <input type="file" id="" name="icon" value=""> <br>
     <label for="password">Status</label>
     <select id="nf-status" name="status" class="form-control" >
-        <option value="active" @if($ClientDomain->status == 'active') selected=selected @endif>Active</option>
-        <option value="inactive" @if($ClientDomain->status == 'inactive') selected=selected @endif>InActive</option>
+        <option value="active" @if($MenuData->status == 'active') selected=selected @endif>Active</option>
+        <option value="inactive" @if($MenuData->status == 'inactive') selected=selected @endif>InActive</option>
     </select>
 
     

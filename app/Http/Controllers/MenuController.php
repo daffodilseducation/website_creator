@@ -93,9 +93,9 @@ class MenuController extends Controller
      public function menu(Request $request) {
         $userId = Auth::user()->id;
         if (!empty($userId)) {
-            $ClientDomain = Menu::where('user_id', '=', $userId)->get();
+            $MenuData = Menu::where('user_id', '=', $userId)->get();
         }
-        return view('pages.menu.index', compact('ClientDomain'));
+        return view('pages.menu.index', compact('MenuData'));
     }
     
     public function createMenu(Request $request) {
@@ -111,8 +111,8 @@ class MenuController extends Controller
     }
     
     public function editMenu(Request $request, $id) {
-        $ClientDomain = ClientDomain::where('id', '=', $id)->first();
-        return view('pages.domain.edit', compact('ClientDomain'));
+        $MenuData = Menu::where('id', '=', $id)->first();
+        return view('pages.menu.edit', compact('MenuData'));
     }
 
     public function postCreateMenu(Request $request) {
@@ -121,18 +121,8 @@ class MenuController extends Controller
     }
     
     public function postUpdateMenu(Request $request) {
-        //$decryption_key = shell_exec('openssl rand -hex 32');
-       // echo $decryption_key;die;
-            $id = $request->get('domain_id');
-            $domain = $request->get('domain');
-            $login_redirect_url = $request->get('login_redirect_url');
-            $logout_redirect_url = $request->get('logout_redirect_url');
-            $status = $request->get('status');
-            ClientDomain::updateOrCreate(
-                    ['id' => $id],
-                    ['domain' => $domain,'login_redirect_url' => $login_redirect_url,'logout_redirect_url' => $logout_redirect_url,'status' => $status]
-            );
-        return redirect()->intended('domain');
+        $menuSave = Menu::update_menus($request, Auth::user());
+        return redirect()->intended('menu');
     }
     
 }
