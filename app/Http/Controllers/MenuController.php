@@ -116,8 +116,6 @@ class MenuController extends Controller
     }
 
     public function postCreateMenu(Request $request) {
-        echo "<pre>";
-        print_r($request->all()); die;
         $menuSave = Menu::save_menus($request, Auth::user());
         return redirect()->intended('menu');
     }

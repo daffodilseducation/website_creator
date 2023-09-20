@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-     protected $guarded =[];
+    protected $guarded =[];
 
      public static function save_menus($req, $authUser){
 
@@ -25,7 +25,7 @@ class Menu extends Model
           $dt['parent_id'] = $req->get('parent_id') ? $req->get('parent_id') : 0;
           $dt['label'] = $req->get('label');
           $dt['slug'] = $req->get('slug');
-          $dt['order'] = $req->get('order');
+          $dt['order_no'] = $req->get('order');
           $dt['icon'] = $file ? $file->getClientOriginalName() : "";
           $dt['status'] = 'Active';
           $menus = new Menu($dt);
