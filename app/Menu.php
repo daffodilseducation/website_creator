@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Menu extends Model
 {
@@ -74,4 +75,36 @@ class Menu extends Model
                 ->update($dt);
         
     }
+
+    public static function getTree($rootids){
+        if(empty($rootids)){
+            return;
+        }
+        $rootids = trim($rootids, ",");
+        // $child_orgs_ids = '';
+
+         $raw_sql = "SELECT GROUP_CONCAT(m.id) as child_ids
+                          FROM  menus  as m
+                          WHERE m.parent_id in ($rootids) ";
+
+
+          $orgs  =  DB::select(DB::raw($raw_sql));
+          //$orgs = json_decode(json_encode($orgs),true);
+          
+          $menu_ids = trim($orgs[0]->child_ids,',');
+          if(!empty($menu_ids)){
+              $menu_ids .= ','.self::getTree($menu_ids);
+              
+          }
+         return trim($menu_ids, ',');
+       }
+
+    public static function getChildMenus($menu_id){
+          // echo "<pre>"; print_r($enable_parent_child);exit;
+          $childs = self::getTree($menu_id);   
+          $childs = trim($childs,',');         
+          $childs = !empty($childs) ? explode(',', $childs) : [];
+          $childs[] = $menu_id;
+          return $childs;
+     }
 }

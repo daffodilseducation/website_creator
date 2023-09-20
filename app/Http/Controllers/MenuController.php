@@ -106,6 +106,8 @@ class MenuController extends Controller
         if (!empty($userId)) {
             $MenuData = Menu::where('user_id', '=', $userId)->where('parent_id', '=', null)->get();
         }
+        // $chilsMenus = Menu::getChildMenus(1);
+        // echo "<pre>"; print_r($chilsMenus);exit;
         return view('pages.menu.index', compact('MenuData'));
     }
     
