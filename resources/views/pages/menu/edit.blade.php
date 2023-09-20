@@ -11,7 +11,7 @@
 
 
 <div class="pageContent">
-  <form action="/updateMenu" method="post">
+  <form action="/updateMenu" method="post" enctype="multipart/form-data">
       @csrf
     <input type="hidden" name="id" id="secret" value="<?php echo $MenuData->id;?>">
       <label for="fname">Enter Label</label>
@@ -24,7 +24,7 @@
       <input type="text" id="" name="order" placeholder="Enter Order.." value="<?php echo $MenuData->order_no;?>">
       
       <label for="lname">Icon  </label> <br>
-      <input type="file" id="" name="icon" value=""> <br>
+      <input type="file" id="" name="icon"> <br>
     <label for="password">Status</label>
     <select id="nf-status" name="status" class="form-control" >
         <option value="active" @if($MenuData->status == 'active') selected=selected @endif>Active</option>

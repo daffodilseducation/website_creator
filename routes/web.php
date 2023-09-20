@@ -51,7 +51,7 @@ Route::get('/menu', 'MenuController@menu');
 Route::get('/createMenu', 'MenuController@createMenu');
 Route::post('/createMenu', 'MenuController@postcreateMenu');
 Route::get('/menu/edit/{id}', 'MenuController@editMenu');
-Route::post('/updateMenu', 'DomainController@postUpdateMenu');
+Route::post('/updateMenu', 'MenuController@postUpdateMenu');
 
 
 Auth::routes();
