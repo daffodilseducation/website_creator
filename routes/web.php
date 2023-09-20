@@ -47,6 +47,11 @@ Route::get('/reset-password/{token}', 'ResetPasswordController@getPassword');
 Route::post('/reset-password', 'ResetPasswordController@updatePassword');
 Route::get('/logout/app', 'LoginController@logoutApp');
 
+Route::get('/menu', 'MenuController@menu');
+Route::get('/createMenu', 'MenuController@createMenu');
+Route::post('/createMenu', 'MenuController@postcreateMenu');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
