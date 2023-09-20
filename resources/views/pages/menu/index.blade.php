@@ -34,7 +34,17 @@
             <td><?php $old_date_timestamp = strtotime($MenuVal->created_at); echo date('Y-M-d H:i:s', $old_date_timestamp); ?></td>
             <td>{{$MenuVal->parent_id}}</td>
             <td>{{$MenuVal->status}}</td>
-            <td class="actions"><a href="/menu/edit/{{$MenuVal->id}}"><i class="fa fa-pencil"></i>Edit</a></td>
+            <td class="actions">
+                <a href="/menu/edit/{{$MenuVal->id}}"><i class="fa fa-pencil"></i>Edit</a>
+                  <form action="{{ route('menu.destroy', $MenuVal->id)}}" method="post"
+                    class="DeleteKpiLink" id="{{$MenuVal->id}}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="item" title="Delete" type="submit">
+                        <i class="fa fa-trash-o"></i>
+                    </button>
+                </form>
+            </td>
           </tr>
           @endforeach
         </table>
