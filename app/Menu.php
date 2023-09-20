@@ -48,6 +48,10 @@ class Menu extends Model
                         mkdir($path, 0777, true);
                }
                $file->move($path, $file->getClientOriginalName());
+          }elseif($req->get('icon_removed') == 1){
+               if(!empty($menu->icon) && file_exists(public_path($menu->icon))){
+                      unlink(public_path($menu->icon));
+               }
           }
 
 
@@ -59,6 +63,8 @@ class Menu extends Model
           $dt['order_no'] = $req->get('order');
           if($file){
                $dt['icon'] = $file ? 'menu/icons/'.$file->getClientOriginalName() : "";
+          }elseif($req->get('icon_removed') == 1){
+               $dt['icon'] = null;
           }
           $dt['status'] = $req->get('status');
           // $menus = new Menu($dt);
