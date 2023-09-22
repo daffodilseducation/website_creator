@@ -61,7 +61,7 @@ $data= Auth::user();
                                       <li><a href="{{ url('/home')}}" class="dropdown-item">Dashboard</a></li>
                                       <li><a href="{{ url('/client-user')}}" class="dropdown-item">Client User List</a></li>
                                       <li><a href="{{ url('/domain')}}" class="dropdown-item">Domain</a></li>
-                                      <li><a href="{{ url('/menu')}}" class="dropdown-item">Menu</a></li>
+                                      <li><a href="{{ url('/menus')}}" class="dropdown-item">Menu</a></li>
                                       @else
                                       <li><a href="{{ url('/home')}}" class="dropdown-item">Dashboard</a></li>
                                       <li><a href="{{ url('/client-list')}}" class="dropdown-item">Client List</a></li>

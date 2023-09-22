@@ -35,8 +35,8 @@
             <td>{{$MenuVal->parent_id}}</td>
             <td>{{$MenuVal->status}}</td>
             <td class="actions">
-                <a href="/menu/edit/{{$MenuVal->id}}"><i class="fa fa-pencil"></i>Edit</a>
-                  <form action="{{ route('menu.destroy', $MenuVal->id)}}" method="post"
+                <a href="/menus/edit/{{$MenuVal->id}}"><i class="fa fa-pencil"></i>Edit</a>
+                  <form action="{{ route('menus.destroy', $MenuVal->id)}}" method="post"
                     class="DeleteKpiLink" id="{{$MenuVal->id}}">
                     @csrf
                     @method('DELETE')

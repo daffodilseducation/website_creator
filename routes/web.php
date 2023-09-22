@@ -47,11 +47,11 @@ Route::get('/reset-password/{token}', 'ResetPasswordController@getPassword');
 Route::post('/reset-password', 'ResetPasswordController@updatePassword');
 Route::get('/logout/app', 'LoginController@logoutApp');
 
-Route::resource('/menu', 'MenuController');
-Route::get('/menu', 'MenuController@menu');
+Route::resource('/menus', 'MenuController');
+Route::get('/menus', 'MenuController@menu');
 Route::get('/createMenu', 'MenuController@createMenu');
 Route::post('/createMenu', 'MenuController@postcreateMenu');
-Route::get('/menu/edit/{id}', 'MenuController@editMenu');
+Route::get('/menus/edit/{id}', 'MenuController@editMenu');
 Route::post('/updateMenu', 'MenuController@postUpdateMenu');
 
 

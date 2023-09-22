@@ -92,7 +92,7 @@ class MenuController extends Controller
         if(!empty($chilsMenus)){
             Menu::whereIn('id', $chilsMenus)->delete();
         }
-        return redirect('/menu')->with('success', 'Menu deleted!');
+        return redirect('/menus')->with('success', 'Menu deleted!');
         
 
         
@@ -139,12 +139,12 @@ class MenuController extends Controller
 
     public function postCreateMenu(Request $request) {
         $menuSave = Menu::save_menus($request, Auth::user());
-        return redirect()->intended('menu');
+        return redirect()->intended('menus');
     }
     
     public function postUpdateMenu(Request $request) {
         $menuSave = Menu::update_menus($request, Auth::user());
-        return redirect()->intended('menu');
+        return redirect()->intended('menus');
     }
     
 }
